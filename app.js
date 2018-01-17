@@ -23,7 +23,7 @@ var salesPike = {
 
       var liEl = document.createElement('li');
       liEl.textContent = timeOfDay[i] + ': ' + this.getEstimate() + ' Cookies Sold.';
-      cookiesSold += this.getEstimate;
+      cookiesSold = cookiesSold + this.getEstimate();
       ulEl.appendChild(liEl);
     }
     liEl = document.createElement('li');
