@@ -1,6 +1,5 @@
 'use strict';
 var timeOfDay = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-
 var cookieTable = document.getElementById('patsSalesTable');
 var totalCookies = [];
 
@@ -38,7 +37,6 @@ CookieStore.prototype.render = function () {
   cookieTable.appendChild(trEl);
 };
 
-
 function makeHeaderRow (head) {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
@@ -55,7 +53,6 @@ function makeHeaderRow (head) {
   trEl.appendChild(thEl);
   cookieTable.appendChild(trEl);
 }
-
 
 var pike = new CookieStore('Seattle', 100, 25, 6.3);
 var seaTac = new CookieStore('Seatac Airport', 24, 3, 1.2);
