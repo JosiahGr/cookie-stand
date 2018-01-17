@@ -2,7 +2,6 @@
 var timeOfDay = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var cookieTable = document.getElementById('patsSalesTable');
 var totalCookies = [];
-var totalHourlySales = [];
 
 function CookieStore(store, maxCust, minCust, cookieSold) {
   this.store = store;
@@ -30,11 +29,10 @@ CookieStore.prototype.render = function () {
     tdEl = document.createElement('td');
     tdEl.textContent = cookiesSold;
     trEl.appendChild(tdEl);
-    totalCookiesSold += this.getEstimate();
-  } 
+    totalCookiesSold += cookiesSold;
+  }
   tdEl = document.createElement('td');
   tdEl.textContent = totalCookiesSold;
-  totalHourlySales += totalCookiesSold;
   trEl.appendChild(tdEl);
   cookieTable.appendChild(trEl);
 };
@@ -56,21 +54,21 @@ function makeHeaderRow (head) {
   cookieTable.appendChild(trEl);
 }
 
-
 function makeFooterRow (foot) {
   var trEl = document.createElement('tr');
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Hourly Sales Total';
-  trEl.appendChild(thEl);
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Hourly Sales Total';
+  trEl.appendChild(tdEl);
 
   for(var i = 0; i < timeOfDay.length; i++) {
-    thEl = document.createElement('th');
-    thEl.textContent = foot[i];
-    totalHourlySales += totalCookies;
-    trEl.appendChild(thEl);
+    totalCookies = 0;
+    tdEl = document.createElement('th');
+    tdEl.textContent = foot[i];
+    trEl.appendChild(tdEl);
   }
-  thEl = document.createElement('th');
-  thEl.appendChild(trEl);
+  tdEl = document.createElement('td');
+  tdEl.appendChild(trEl);
+  tdEl.textContent = totalHourlySales;
   cookieTable.appendChild(trEl);
 }
 
