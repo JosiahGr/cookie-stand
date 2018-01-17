@@ -32,8 +32,6 @@ var salesPike = {
   }
 };
 
-salesPike.render();
-
 var salesSeatac = {
   maxCust: 24,
   minCust: 3,
@@ -62,8 +60,6 @@ var salesSeatac = {
     ulEl.appendChild(liEl);
   }
 };
-
-salesSeatac.render();
 
 var salesSeattleCenter = {
   maxCust: 38,
@@ -94,8 +90,6 @@ var salesSeattleCenter = {
   }
 };
 
-salesSeattleCenter.render();
-
 var salesCapHill = {
   maxCust: 38,
   minCust: 20,
@@ -124,8 +118,6 @@ var salesCapHill = {
     ulEl.appendChild(liEl);
   }
 };
-
-salesCapHill.render();
 
 var salesAlki = {
   maxCust: 38,
@@ -156,52 +148,9 @@ var salesAlki = {
   }
 };
 
+salesPike.render();
+salesSeatac.render();
+salesSeattleCenter.render();
+salesCapHill.render();
 salesAlki.render();
 
-
-// function mathCapHill() {
-//   var randomNum = Math.random() * (38 - 20) + 20;
-//   randomNum * 2.3;
-//   randomNum = Math.floor(randomNum);
-//   return (randomNum);
-// }
-
-// var salesCapHill = {
-//   cookiesSold: [mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill(), mathCapHill()],
-
-//   render: function() {
-//     var ulEl = document.getElementById('CapHill');
-
-//     for(var i = 0; i < timeOfDay.length; i++) {
-//       var liEl = document.createElement('li');
-//       liEl.textContent = timeOfDay[i] + ': ' + this.cookiesSold[i] + ' Cookies Sold.';
-//       ulEl.appendChild(liEl);
-//     }
-//   }
-// };
-
-// salesCapHill.render();
-
-
-// function mathAlki() {
-//   var randomNum = Math.random() * (16 - 2) + 2;
-//   randomNum * 4.6;
-//   randomNum = Math.floor(randomNum);
-//   return (randomNum);
-// }
-
-// var salesAlki = {
-//   cookiesSold: [mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki(), mathAlki()],
-
-//   render: function() {
-//     var ulEl = document.getElementById('Alki');
-
-//     for(var i = 0; i < timeOfDay.length; i++) {
-//       var liEl = document.createElement('li');
-//       liEl.textContent = timeOfDay[i] + ': ' + this.cookiesSold[i] + ' Cookies Sold.';
-//       ulEl.appendChild(liEl);
-//     }
-//   }
-// };
-
-// salesAlki.render();
