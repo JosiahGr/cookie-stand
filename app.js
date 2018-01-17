@@ -148,6 +148,8 @@ var salesAlki = {
   }
 };
 
+
+makeHeaderRow();
 salesPike.render();
 salesSeatac.render();
 salesSeattleCenter.render();
