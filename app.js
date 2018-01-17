@@ -11,7 +11,7 @@ function CookieStore(store, maxCust, minCust, cookieSold) {
   this.getEstimate = function() {
     var cookies = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
     cookies *= this.cookieSold;
-    cookies = Math.floor(cookies);
+    cookies = Math.round(cookies);
     return cookies;
   };
   totalCookies.push(this);
