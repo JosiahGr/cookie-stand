@@ -13,14 +13,10 @@ h2 {
   font-weight: bold;
 }
 
-div {
+table {
   position: absolute;
-  left: 20px;
-  top: 180px;
-}
-
-h3 {
-  color: White;
+  top: 300px;
+  border: solid;
 }
 
 #logo {

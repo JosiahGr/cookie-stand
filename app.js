@@ -1,28 +1,37 @@
 'use strict';
-// var timeOfDay = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12am:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:'];
-
 
 var allCookies = [];
 
 var cookieTable = document.getElementById('patsSalesTable');
 
+function quote() {
+  var randomNum = Math.random() * (100 - 25) + 25;
+  randomNum *= 6.3;
+  randomNum = Math.floor(randomNum);
+  return (randomNum);
+}
+
+
 function CookieSales(storeLocation, sixAm, sevenAm, eightAm, nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm, threePm, fourPm, fivePm, sixPm, sevenPm, sales) {
   this.storeLocation = storeLocation;
-  this.sixAm = sixAm;
-  this.sevenAm = sevenAm;
-  this.eightAm = eightAm;
-  this.nineAm = nineAm;
-  this.tenAm = tenAm;
-  this.elevenAm = elevenAm;
-  this.twelvePm = twelvePm;
-  this.onePm = onePm;
-  this.twoPm = twoPm;
-  this.threePm = threePm;
-  this.fourPm = fourPm;
-  this.fivePm = fivePm;
-  this.sixPm = sixPm;
-  this.sevenPm = sevenPm;
-  this.sales = sales;
+  this.sixAm = sixAm + quote();
+  this.sevenAm = sevenAm + quote();
+  this.eightAm = eightAm + quote();
+  this.nineAm = nineAm + quote();
+  this.tenAm = tenAm + quote();
+  this.elevenAm = elevenAm + quote();
+  this.twelvePm = twelvePm + quote();
+  this.onePm = onePm + quote();
+  this.twoPm = twoPm + quote();
+  this.threePm = threePm + quote();
+  this.fourPm = fourPm + quote();
+  this.fivePm = fivePm + quote();
+  this.sixPm = sixPm + quote();
+  this.sevenPm = sevenPm + quote();
+
+  var total = this.sixAm + this.sevenAm + this.eightAm + this.nineAm + this.tenAm + this.elevenAm + this.twelvePm + this.onePm + this.twoPm + this.threePm + this.fourPm + this.fivePm + this.sixPm + this.sevenPm;
+  
+  this.sales = sales + total;
   allCookies.push(this);
 }
 
@@ -167,11 +176,18 @@ function makeHeaderRow() {
 }
 
 
-var seattle = new CookieSales('Seattle', 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 18000);
-
+var seattle = new CookieSales('Seattle', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+var pike = new CookieSales('1st & Pike', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+var alki = new CookieSales('Alki', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+var seatac = new CookieSales('Seatac Airport', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+var capHill = new CookieSales('Capitol Hill', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 makeHeaderRow();
 seattle.render();
+pike.render();
+alki.render();
+seatac.render();
+capHill.render();
 
 
 
