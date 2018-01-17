@@ -1,19 +1,39 @@
 'use strict';
-var timeOfDay = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var timeOfDay = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+var cookiesSold = [];
 
-var cookieQuote = {
+var salesPike = {
   maxCust: 100,
   minCust: 25,
-  cookieSold: 6.3, 
+  cookieSold: 6.3,
   getEstimate: function() {
     var cookies = Math.random() * (this.maxCust - this.minCust) + this.minCust;
-    cookies *= this.cookieSold; 
+    cookies *= this.cookieSold;
     cookies = Math.floor(cookies);
     return cookies;
-    
+  },
+
+  render: function() {
+    cookiesSold = 0;
+    salesPike.getEstimate();
+    var ulEl = document.getElementById('1stPike');
+
+    for(var i = 0; i < timeOfDay.length; i++) {
+
+      var liEl = document.createElement('li');
+      liEl.textContent = timeOfDay[i] + ': ' + this.getEstimate() + ' Cookies Sold.';
+      cookiesSold += this.getEstimate;
+      ulEl.appendChild(liEl);
+    }
+    liEl = document.createElement('li');
+    liEl.textContent = 'Total of' + cookiesSold + ' sold at location.';
+    ulEl.appendChild(liEl);
   }
 };
+
+salesPike.render();
+
 
 // var cookieMath = cookieQuote.getEstimate();
 
