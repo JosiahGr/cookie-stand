@@ -55,8 +55,6 @@ function makeHeaderRow (head) {
   cookieTable.appendChild(trEl);
 }
 
-
-
 function renderAllStores() {
   for(var i in totalCookies) {
     totalCookies[i].render();
@@ -64,19 +62,25 @@ function renderAllStores() {
 }
 
 function makeFooterRow (foot) {
+  var allOfTheCookies = 0;
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Hourly Sales Total';
   trEl.appendChild(tdEl);
 
   for(var i = 0; i < timeOfDay.length; i++) {
+    for(var b = 0; b < totalCookies[b].length; b++) {
+      var cookieHour = 0;
+      cookieHour += totalCookies;
+      tdEl = document.createElement('td');
+      trEl.appendChild(tdEl);
+      tdEl.textContent = cookieHour;
+    }
     tdEl = document.createElement('td');
+    tdEl.textContent = allOfTheCookies;
     trEl.appendChild(tdEl);
-  } 
-  tdEl = document.createElement('td');
-  tdEl.appendChild(trEl);
-  tdEl.textContent = totalCookies;
-  cookieTable.appendChild(trEl);
+    cookieTable.appendChild(trEl);
+  }
 }
 
 function addNewStore(event) {
@@ -92,7 +96,7 @@ function addNewStore(event) {
   cookieTable.innerHTML = '';
   makeHeaderRow(timeOfDay);
   renderAllStores();
-  // makeFooterRow(totalCookies);
+  makeFooterRow(totalCookies);
 
 }
 
@@ -107,6 +111,3 @@ new CookieStore('Alki', 16, 2, 4.6);
 makeHeaderRow(timeOfDay);
 renderAllStores();
 makeFooterRow(totalCookies);
-
-
-
