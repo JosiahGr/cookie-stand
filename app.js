@@ -1,8 +1,10 @@
 'use strict';
 var timeOfDay = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var cookieTable = document.getElementById('patsSalesTable');
-var totalCookies = [];
 var salesForm = document.getElementById('sales-form');
+
+var totalCookies = [];
+var hourlyTotalCookies = []; 
 
 function CookieStore(store, maxCust, minCust, cookieSold) {
   this.store = store;
@@ -56,9 +58,11 @@ function makeHeaderRow (head) {
 }
 
 function renderAllStores() {
+  makeHeaderRow(timeOfDay);
   for(var i in totalCookies) {
     totalCookies[i].render();
   }
+  makeFooterRow(totalCookies);
 }
 
 function makeFooterRow (foot) {
@@ -94,13 +98,8 @@ function addNewStore(event) {
   new CookieStore(newStore, newMaxCust, newMinCust, newCookieSold);
 
   cookieTable.innerHTML = '';
-  makeHeaderRow(timeOfDay);
   renderAllStores();
-  makeFooterRow(totalCookies);
-
 }
-
-salesForm.addEventListener('submit', addNewStore);
 
 new CookieStore('1st & Pike', 100, 25, 6.3);
 new CookieStore('Seatac Airport', 24, 3, 1.2);
@@ -108,6 +107,6 @@ new CookieStore('Seattle Center', 38, 11, 3.7);
 new CookieStore('Capital Hill', 38, 20, 2.3);
 new CookieStore('Alki', 16, 2, 4.6);
 
-makeHeaderRow(timeOfDay);
+salesForm.addEventListener('submit', addNewStore);
+
 renderAllStores();
-makeFooterRow(totalCookies);
