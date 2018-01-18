@@ -1,16 +1,18 @@
 'use strict';
-var timeOfDay = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var timeOfDay = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var cookieTable = document.getElementById('patsSalesTable');
 var salesForm = document.getElementById('sales-form');
 
 var totalCookies = [];
-var hourlyTotalCookies = []; 
 
-function CookieStore(store, maxCust, minCust, cookieSold) {
+
+function CookieStand(store, maxCust, minCust, cookieSold) {
   this.store = store;
   this.maxCust = maxCust;
   this.minCust = minCust;
   this.cookieSold = cookieSold;
+  this.customersEachHour = [];
+  this.cookiesPerHour = [];
   this.getEstimate = function() {
     var cookies = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
     cookies *= this.cookieSold;
@@ -20,7 +22,10 @@ function CookieStore(store, maxCust, minCust, cookieSold) {
   totalCookies.push(this);
 }
 
-CookieStore.prototype.render = function () {
+CookieStand.allStores = [];
+
+
+CookieStand.prototype.render = function () {
   var totalCookiesSold = 0;
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
