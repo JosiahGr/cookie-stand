@@ -19,9 +19,10 @@ table {
   top: 180px;
 }
 
-#salesForm {
+#sales-form {
   position: absolute;
   top: 500px;
+  display: block;
 }
 
 h3 {
