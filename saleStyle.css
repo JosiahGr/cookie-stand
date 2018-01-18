@@ -19,6 +19,12 @@ table {
   top: 180px;
 }
 
+#sales-form {
+  position: absolute;
+  top: 500px;
+  display: block;
+}
+
 h3 {
   color: White;
 }

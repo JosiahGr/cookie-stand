@@ -14,7 +14,25 @@
 
     <!-- <h2>Pat's Sales Table</h2> -->
     <table id="patsSalesTable"></table>
-
+    <form id="sales-form">
+        <fieldset>
+          <legend>Add Store</legend>
+  
+          <label for="store">Name:</label>
+          <input name="store" type="text" />
+  
+          <label for="maxCust">Max customer per hour:</label>
+          <input name="maxCust" type="number" />
+  
+          <label for="minCust">Min customer per hour:</label>
+          <input name="minCust" type="number" />
+  
+          <label for="cookieSold">Average cookie(s) sold per person:</label>
+          <input name="cookieSold" type="number" />
+  
+          <button id="add-store">Add New Store</button>
+        </fieldset>
+      </form>
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
