@@ -93,7 +93,7 @@ function random(min, max) {
 function renderAllStores() {
   makeHeaderRow(timeOfDay);
   for(var i in CookieStand.allStores) {
-    CookieStand.allStores.render();
+    CookieStand.allStores[i].render();
   }
   makeFooterRow();
 }
