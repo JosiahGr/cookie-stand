@@ -70,7 +70,7 @@ function makeHeaderRow (head) {
 function makeFooterRow() {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.textContent = 'Hourly Sales:   ';
+  thEl.textContent = 'Hourly Sales: ';
   trEl.appendChild(thEl);
 
   for(var i in timeOfDay) {
@@ -93,7 +93,7 @@ function random(min, max) {
 function renderAllStores() {
   makeHeaderRow(timeOfDay);
   for(var i in CookieStand.allStores) {
-    CookieStand.allStores[i].render();
+    CookieStand.allStores.render();
   }
   makeFooterRow();
 }
@@ -112,7 +112,6 @@ function addNewStore(event) {
   renderAllStores();
 }
 
-
 salesForm.addEventListener('submit', addNewStore);
 
 new CookieStand('1st & Pike', 100, 25, 6.3);
@@ -120,7 +119,5 @@ new CookieStand('Seatac Airport', 24, 3, 1.2);
 new CookieStand('Seattle Center', 38, 11, 3.7);
 new CookieStand('Capital Hill', 38, 20, 2.3);
 new CookieStand('Alki', 16, 2, 4.6);
-
-
 
 renderAllStores();
