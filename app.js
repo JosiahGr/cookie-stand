@@ -48,17 +48,18 @@ CookieStand.prototype.render = function () {
   thEl.textContent = this.totalDailyCookies;
   trEl.appendChild(thEl);
   cookieTable.appendChild(trEl);
+  this.totalDailyCookies = 0;
 };
 
-function makeHeaderRow (head) {
+function makeHeaderRow () {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = 'Store Location';
   trEl.appendChild(thEl);
   
-  for(var i = 0; i < timeOfDay.length; i++){
+  for(var i in timeOfDay){
     thEl = document.createElement('th');
-    thEl.textContent = head[i];
+    thEl.textContent = timeOfDay[i];
     trEl.appendChild(thEl);
   }
   thEl = document.createElement('th');
@@ -73,29 +74,28 @@ function makeFooterRow() {
   thEl.textContent = 'Hourly Sales: ';
   trEl.appendChild(thEl);
 
+  var hourlyTotal = 0;
+  var dailyTotal = 0;
   for(var i in timeOfDay) {
-    var hourlyTotal = 0;
+
+    hourlyTotal = 0;
 
     for(var j in CookieStand.allStores) {
       hourlyTotal += CookieStand.allStores[j].cookiesPerHour[i];
+      dailyTotal += CookieStand.allStores[j].cookiesPerHour[i];
     }
     thEl = document.createElement('th');
     thEl.textContent = hourlyTotal;
     trEl.appendChild(thEl);
   }
+  thEl = document.createElement('th');
+  thEl.textContent = dailyTotal;
+  trEl.appendChild(thEl);
   cookieTable.appendChild(trEl);
 }
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function renderAllStores() {
-  makeHeaderRow(timeOfDay);
-  for(var i in CookieStand.allStores) {
-    CookieStand.allStores[i].render();
-  }
-  makeFooterRow();
 }
 
 function addNewStore(event) {
@@ -112,12 +112,20 @@ function addNewStore(event) {
   renderAllStores();
 }
 
-salesForm.addEventListener('submit', addNewStore);
+function renderAllStores() {
+  makeHeaderRow();
+  for(var i in CookieStand.allStores) {
+    CookieStand.allStores[i].render();
+  }
+  makeFooterRow();
+}
 
 new CookieStand('1st & Pike', 100, 25, 6.3);
 new CookieStand('Seatac Airport', 24, 3, 1.2);
 new CookieStand('Seattle Center', 38, 11, 3.7);
 new CookieStand('Capital Hill', 38, 20, 2.3);
 new CookieStand('Alki', 16, 2, 4.6);
+
+salesForm.addEventListener('submit', addNewStore);
 
 renderAllStores();
