@@ -1,0 +1,120 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+main {
+  margin: 0px auto;
+}
+
+
+nav {
+  height: 90px;
+  background-color: #94B6D3;
+  margin: 0px auto;
+  display: block;
+  position: relative;
+}
+
+nav ul {
+  display: inline-block;
+  padding-left: 0px;
+  margin-left: 250px;
+  position: absolute;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 10px 34px;
+  margin: 0px 0px 0px 50px;
+  font-size: 30px;
+  
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #C2DCF3;
+}
+
+
+container img{
+  z-index: 1;
+  width: 1424px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+#logo {
+  z-index: 100;
+  position: absolute;
+  color: #273F4D;
+  font-size: 60px;
+  font-weight: bold;
+  left: 440px;
+  top: 150px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+h3 {
+  font-family: 'Cabin Sketch', cursive;
+  text-align: center;
+  font-size: 50px;
+}
+
+main ul {
+  margin-left: 120px;
+  display: inline-block;
+}
+
+main ul li {
+  display: inline-block;
+  margin: 25px 25px 30px 0px; 
+}
+
+#one {
+  display: inline-block;
+  margin-left: 90px;
+}
+
+#one li {
+  padding: 0px 120px;
+}
+
+section img {
+  margin-right: 30px;
+  float: left;
+}
+
+div {
+  width: calc(50% - 30px);
+  float: left;
+  height: 400px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+
+p {
+  line-height: 1.5em;
+  height: 296px;
+  overflow: scroll;
+}
+
+button {
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  margin-top: 8px;
+  padding: 10px 30px;
+}
+
+footer {
+  height: 100px;
+  background-color: #444;
+  width: 1100px;
+  margin: 425px auto 0px;
+}
