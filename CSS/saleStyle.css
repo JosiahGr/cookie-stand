@@ -1,9 +1,8 @@
 body {
-  background-color: #986E2C;
+  background-color: #C2DCF3;
 }
 
 h2 {
-  position: relative;
   color: Black;
   left: 0;
   top: 80px;
@@ -14,9 +13,23 @@ h2 {
 }
 
 table {
-  position: absolute;
-  left: 20px;
-  top: 180px;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 640px; 
+  border-collapse: 
+  collapse; border-spacing: 0; 
+}
+
+td, th { border: 1px solid #CCC; height: 30px; }
+
+th {  
+  background: #F3F3F3;
+  font-weight: bold;
+}
+
+td {  
+  background: #FAFAFA;
+  text-align: center;
 }
 
 #sales-form {
@@ -30,7 +43,6 @@ h3 {
 }
 
 #logo {
-  position: absolute;
   color: White;
   font-size: 50px;
   left: 0px;
@@ -39,17 +51,17 @@ h3 {
 }
 
 .nav-link {
-  position: relative;
   display: inline;
   color: white;
   left: 0;
   top: 80px;
   font-size: 28px;
-  padding: 10px;
+  padding: 60px 10px;
+  margin: 40px 0px;
 }
 
 a {
   text-decoration: none;
-  color: White;
+  color: rgb(250, 148, 148);
 }
 
